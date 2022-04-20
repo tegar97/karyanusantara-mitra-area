@@ -79,9 +79,7 @@ function GeneralSetting() {
     e.preventDefault()
        const token = localStorage.getItem("token");
     const bearer = `Bearer ${token}`;
-    if (documentData.npwpNo.length < 15) {
-            return toast.error('NPWP TIDAK VALID')
-          }
+    
 
     const data = {
       npwp_no : documentData.npwpNo
@@ -281,7 +279,6 @@ function GeneralSetting() {
               label={"Nomer NPWP "}
               name={"npwpNomer"}
               type="text"
-              maxLength="15"
               value={documentData.npwpNo}
               setState={(e) =>
                 setDocumentData({ ...documentData, npwpNo: e.target.value })

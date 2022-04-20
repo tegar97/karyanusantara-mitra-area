@@ -86,7 +86,7 @@ const [weightBeforeConvert, setWeightBeforeConvert] = useState('');
     await postProduct(formData, `Bearer ${token}`).then( async (res) => {
       await axios.post(`/product/image?id=${res.data.id}`, fd)
         
-      navigate("/");
+      navigate("/products");
       toast.success("Prdouk telah ditambahkan dan akan di review");
      
 
