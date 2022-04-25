@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { populateProfile } from '../../store/actions/users';
 import { Router,useNavigate } from "react-router-dom";
 import axios from 'axios';
+import Cookie from 'js-cookie'
   import { toast } from "react-toastify";
 function Login({history}) {
     const dispatch = useDispatch();
@@ -22,8 +23,8 @@ function Login({history}) {
         .login({ email, password })
         .then(async (res) => {
           const now = new Date()
+          Cookie.set("token_mitra", res.data.data.access_token);
             localStorage.setItem("token", res.data.data.access_token);
-            localStorage.setItem("expire_in", now.getTime() + 86400000);
               await auth.details(`Bearer ${res.data.data.access_token}`).then((detail) => {
 
                   
