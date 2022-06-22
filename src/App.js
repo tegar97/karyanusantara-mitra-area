@@ -21,6 +21,7 @@ function App() {
   const usersToken = localStorage.getItem("token");
   const search = useLocation().search;
  const nonce =  new URLSearchParams(search).get("nonce");
+          let sessionCookie = Cookie.get("token_mitra");
 
   useEffect(() => {
 
@@ -33,7 +34,6 @@ function App() {
    useEffect(() => {
      let session = null;
      let getExpire;
-          let sessionCookie = Cookie.get("token_mitra");
 
      if (sessionCookie) {
        session = localStorage.getItem("token");
@@ -71,7 +71,7 @@ function App() {
 
    }, [dispatch]);
   
-    const routing = useRoutes(routes(usersToken));
+    const routing = useRoutes(routes(sessionCookie));
   return (
     <div className="relative ">
       <ToastContainer />

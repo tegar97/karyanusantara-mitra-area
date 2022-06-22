@@ -5,6 +5,7 @@ import './../../../sidebar.css';
 import { useSelector } from 'react-redux';
 import { baseUrl } from '../../../constant/baseUrl';
 import { useLocation } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 function SideBar() {
   const location = useLocation();
@@ -14,6 +15,7 @@ function SideBar() {
   
   const logout = () => {
     localStorage.clear('token');
+    Cookies.remove('token_mitra');
               window.location.reload();
 
   }
@@ -90,7 +92,7 @@ function SideBar() {
               </svg>
               <p className="item-title ml-2">
                 <Link to="/">
-                  <span className="text-lg text-decoration-none">Overview</span>
+                  <span className="text-lg text-decoration-none">Home</span>
                 </Link>
               </p>
             </div>
@@ -135,7 +137,7 @@ function SideBar() {
                     </svg>
                     <p className="item-title ml-2 cursor-pointer">
                       <span className="text-lg text-decoration-none">
-                        Product
+                        Produk
                       </span>
                     </p>
                   </div>
@@ -147,7 +149,7 @@ function SideBar() {
                           <p className="  cursor-pointer ">
                             <Link to="/add-product">
                               <span className="text-md  text-decoration-none">
-                                Tambah product
+                                Tambah Produk
                               </span>
                             </Link>
                           </p>
@@ -157,7 +159,7 @@ function SideBar() {
                           <p className="  cursor-pointer">
                             <Link to="/products">
                               <span className="text-md text-decoration-none">
-                                Lihat product
+                                Lihat Produk
                               </span>
                             </Link>
                           </p>
@@ -209,7 +211,7 @@ function SideBar() {
                   <Link to="/transaction">
                     <p className="item-title ml-2">
                       <span className="text-lg text-decoration-none">
-                        Transactions
+                        Transaksi
                       </span>
                     </p>
                   </Link>
@@ -338,7 +340,7 @@ function SideBar() {
                         href="../member/edit-profile.html"
                         className="text-lg text-decoration-none"
                       >
-                        Setting Kurir
+                        Pengaturan Kurir
                       </a>
                     </p>
                   </Link>
@@ -386,7 +388,7 @@ function SideBar() {
                   </defs>
                 </svg>
                 <p className="item-title ml-2 cursor-pointer">
-                  <span className="text-lg text-decoration-none">Setting</span>
+                  <span className="text-lg text-decoration-none">Pengaturan</span>
                 </p>
               </div>
               {expandedSetting && (
@@ -397,7 +399,7 @@ function SideBar() {
                       <p className="  cursor-pointer ">
                         <Link to="/general-setting">
                           <span className="text-md  text-decoration-none">
-                            General setting
+                            Pengaturan akun
                           </span>
                         </Link>
                       </p>
@@ -407,7 +409,7 @@ function SideBar() {
                       <p className="  cursor-pointer">
                         <Link to="/store-setting">
                           <span className="text-md text-decoration-none">
-                            Setting Toko
+                            Pengaturan Toko
                           </span>
                         </Link>
                       </p>

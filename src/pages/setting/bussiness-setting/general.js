@@ -116,11 +116,11 @@ function GeneralSetting() {
     <main className="flex-grow wrapper min-h-screen py-12 px-12 ml-5">
       <div className="mt-5">
         <h1 className="text-4xl font-bold " style={{ color: "#0C145A" }}>
-          General Setting
+           Setting 
         </h1>
         <div className="bg-white shadow-md w-full rounded-md  py-10 mt-10 px-5">
           <div className="py-2 border-b border-gray-200">
-            <spa className="text-xl text-gray-600">Business Settings</spa>
+            <spa className="text-xl text-gray-600">Data Pribadi</spa>
           </div>
           <form method="post" onSubmit={onSubmit} className="content mt-5">
             <InputGroup
@@ -133,7 +133,7 @@ function GeneralSetting() {
               }
             />
             <InputGroup
-              label={"Nomer Telepon Pemilik ukm"}
+              label={"Nomor Telepon Pemilik ukm"}
               name={"ownerPhoneNumber"}
               value={formData.ownerPhoneNumber}
               setState={(e) =>
@@ -173,10 +173,10 @@ function GeneralSetting() {
               <option value="Firma">Firma</option>
               <option value="persekutuan">Persekutuan</option>
               <option value="Koperasi terbatas">Koperasi Terbatas</option>
-              <option value="YAYASAN">Yayayasan</option>
+              <option value="yayasan">yayasan</option>
             </InputGroup>
             <InputGroup
-              label={"annualIncome"}
+              label={"Omset pertahun"}
               name={"annualIncome"}
               value={formData.annualIncome}
               setState={(e) =>
@@ -208,7 +208,7 @@ function GeneralSetting() {
               placeholder={"Contoh sertifikat halal"}
             />
             <InputGroup
-              label={"Nomer sertifikat "}
+              label={"Nomor sertifikat "}
               name={"certificateNumber"}
               value={formData.certificate}
               setState={(e) =>
@@ -276,7 +276,7 @@ function GeneralSetting() {
 
           <form onSubmit={submitDocument}>
             <InputGroup
-              label={"Nomer NPWP "}
+              label={"Nomor NPWP "}
               name={"npwpNomer"}
               type="text"
               value={documentData.npwpNo}
@@ -313,7 +313,7 @@ function GeneralSetting() {
           </div>
           <form method="post" onSubmit={addBank} className="content mt-5">
             <InputGroup
-              label={"Nomer rekening Bank"}
+              label={"Nomor rekening Bank"}
               name={"bannkNumber"}
               type="number"
               value={bankData.bankAccountNumber}
@@ -331,7 +331,7 @@ function GeneralSetting() {
               }
             />
             <InputGroup
-              label={"Nama perusahaan bank"}
+              label={"Nama perusahaan Bank"}
               name={"bankAccountType"}
               type="text"
               placeholder={"Contoh : Bank Mandiri,Bank BCA"}

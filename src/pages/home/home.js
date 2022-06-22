@@ -31,7 +31,7 @@ function Home() {
                     Tambahkan info tentang ukm anda
                   </h2>
                   <span className="text-gray-400 text-sm">
-                    Lengkapi informasi tentang ukm anda seperti nomer hp yang
+                    Lengkapi informasi tentang ukm anda seperti nomor hp yang
                     bisa dihubungi, nama pemilik ukm,bentuk badan usaha dan info
                     lainya.
                   </span>
@@ -107,9 +107,9 @@ function Home() {
           </div>
         ) : (
           <div className="grid grid-cols-3 gap-4 ">
-            <Card title={"Total product"} value="0" />
-            <Card title={"Total transaction"} value="0" />
-            <Card title={"Product menunggu review"} value="0" />
+            <Card title={"Total Produk"} value="0" />
+            <Card title={"Total transaksi"} value="0" />
+            <Card title={"Produk menunggu review"} value="0" />
           </div>
         )}
       </div>

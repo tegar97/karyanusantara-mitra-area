@@ -70,7 +70,7 @@ function Transaction() {
         </div>
         <div className="bg-white w-full flex shadow-md  flex-col mb-5 mt-5 py-2 px-2">
           <span className="text-red-500 text-sm">
-            Pastikan nomer resi yang di input benar,kami hanya bisa validasi
+            Pastikan nomor resi yang di input benar,kami hanya bisa validasi
             resi kurir : pos, wahana, jnt, sap, sicepat, jet, dse, first, ninja,
             lion, idl, rex, ide, sentral, anteraja{" "}
           </span>

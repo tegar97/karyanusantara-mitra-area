@@ -16,7 +16,7 @@ function AddProduct({history}) {
   const [convertPrice, setConverPrice] = useState();
 const [weightFormat, setWeightFormat] = useState('');
 const [weightBeforeConvert, setWeightBeforeConvert] = useState('');
-  
+  const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
 
@@ -51,7 +51,7 @@ const [weightBeforeConvert, setWeightBeforeConvert] = useState('');
   }, []);
   const onSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true)
 
     const fd = new FormData();
     const imageUpload = [];
@@ -89,9 +89,13 @@ const [weightBeforeConvert, setWeightBeforeConvert] = useState('');
       navigate("/products");
       toast.success("Prdouk telah ditambahkan dan akan di review");
      
-
+    setLoading(false)
 
     });
+
+
+
+
      
     
   }
@@ -414,7 +418,6 @@ const [weightBeforeConvert, setWeightBeforeConvert] = useState('');
               <h2 className="font-semibold text-gray-700 mb-1">
                 Ukuran Produk (setelah dikemas)
               </h2>
-              
             </div>
             <div className="col-span-3 grid gap-5  grid-cols-4  ml-20">
               <input
@@ -535,12 +538,21 @@ const [weightBeforeConvert, setWeightBeforeConvert] = useState('');
           </div>
         </div>
         <div className="w-full flex justify-end mt-5">
-          <button
-            type="submit"
-            className="self-end px-5 py-2  bg-blue-100 rounded-md  text-white"
-          >
-            Simpan
-          </button>
+          {loading ? (
+            <button
+              disabled
+              className=" self-end px-5 py-2  bg-gray-400 rounded-md  text-white"
+            >
+              Loading
+            </button>
+          ) : (
+            <button
+              type="submit"
+              className="self-end px-5 py-2  bg-blue-100 rounded-md  text-white"
+            >
+              Simpan
+            </button>
+          )}
         </div>
       </form>
     </div>
